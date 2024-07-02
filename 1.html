@@ -120,11 +120,46 @@ P{
 
 <body>
   
+  
+  <canvas></canvas>
+  <div id="text"></div>
+
+  <script>
+      // Get the URL parameters
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      // Get the text parameter
+      const text = urlParams.get('text');
+
+      // Get the text element
+      const textElement = document.getElementById('text');
+
+      // Check if text parameter exists
+      if (text) {
+          textElement.innerText = text;
+      } else {
+          textElement.innerText = 'rajdeep';
+      }
+  </script>
 
 
+<div>
 
+<button style="background-color:  orangered; height: 30px; border-radius: 50%;" onclick="shareOnWhatsApp()"></button>
+<script>
+    function shareOnWhatsApp() {
+        const text = document.getElementById("inputText").value;
+        const whatsappLink = "https://wa.me/?text=आपको होली की शुभकामनाएं!  https://happy-holi.invite.serv00.net/?text=" + encodeURIComponent(text + "  इस लिंक को क्लिक करके अपने दोस्तों और परिवार को होली की शुभकामनाएं भेजें   आपको होली की शुभकामनाएं! ");
+        window.location.href = whatsappLink;
+    }
+</script>
+</div>
 
+<div><br>
+   </div>
 
+<p></P>
   <!-- Project -->
 <script>
 /*
